@@ -1,0 +1,82 @@
+﻿<!--A declaração de model no início da view pode ser vista
+como uma analogia à declaração de um método e de seus
+parâmetros. Ela habilita o intellisense para conhecer qual tipo
+de dado estamos usando quando o modelo for utilizado pelas
+HTML Helpers e Tag Helpers. Além disso, verifica se o tipo passado
+para a view pode ser convertido para o tipo esperado, em tempo
+de execução.-->
+
+@model IEnumerable<ProjetoCrudMvc.Models.Institution>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    <!--Html.DisplayNameFor()-->
+                    <!--Este método obtém o nome para exibição para o campo do
+                    modelo. Normalmente, ele é o nome da propriedade da classe, mas
+                    pode ser modificado por Data Annotations-->
+
+                    @Html.DisplayNameFor(model => model.InstitutionID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <!--Html.DisplayFor()-->
+                        <!--Este método obtém o conteúdo da propriedade (do objeto) a
+                        ser exibida. A propriedade é informada por meio da expressão
+                        lambda e possui sobrecargas.-->
+                        @Html.DisplayFor(modelItem => item.InstitutionID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.InstitutionID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.InstitutionID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.InstitutionID })
+
+                        <!--
+                           Caso tenha interesse em substituir os HTML Helpers
+                           comentados anteriormente por Tag Helpers, poderíamos utilizar o
+                           código a seguir:
+
+                           <a asp-action="Edit" asp-route-id="item.InstitutionID">Edit</a> |
+                           <a asp-action="Details" asp-route-id="item.InstitutionID">Details</a> |
+                           <a asp-action="Delete" asp-route-id="item.InstitutionID">Delete</a>
+
+                         -->
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
