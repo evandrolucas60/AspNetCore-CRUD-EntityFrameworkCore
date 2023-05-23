@@ -37,14 +37,17 @@ namespace ProjetoCrudMvc
                 options.UseMySql(Configuration.GetConnectionString("IESConnection"), builder =>
                     builder.MigrationsAssembly("ProjetoCrudMvc")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddScoped<IESDbInitializer>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IESDbInitializer iesDbInitializer)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                iesDbInitializer.Initializer();
             }
             else
             {

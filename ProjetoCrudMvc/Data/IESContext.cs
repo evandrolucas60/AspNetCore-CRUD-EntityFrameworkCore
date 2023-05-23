@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using ProjetoCrudMvc.Models;
 
 namespace ProjetoCrudMvc.Data
@@ -14,6 +10,7 @@ namespace ProjetoCrudMvc.Data
         }
 
         
-        public DbSet<Institution> institutions { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<Institution> Institutions { get; set; }
     }
 }
