@@ -31,10 +31,10 @@ Brave.
 
 ```bash
 # clonar repositório
-git clone https://github.com/evandrolucas60/projetoHtml
+git clone https://github.com/evandrolucas60/AspNetCore-CRUD-EntityFrameworkCore
 
 # entrar na pasta do projetoHtml
-projetoHtml
+ProjetoCrudMvc
 
 # executar o projeto no powerShell ou prompt
 dotnet run
