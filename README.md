@@ -36,8 +36,8 @@ git clone https://github.com/evandrolucas60/projetoHtml
 # entrar na pasta do projetoHtml
 projetoHtml
 
-# abrir o arquivo no navegador
-index.html 
+# executar o projeto no powerShell ou prompt
+dotnet run
 ```
 
 # Autor
