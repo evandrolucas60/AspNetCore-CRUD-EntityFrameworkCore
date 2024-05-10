@@ -7,15 +7,13 @@ O projeto cria um interação CRUD simples utilizando as bibliotecas do EntityFr
 
 CRUD são as quatro operações básicas do desenvolvimento de uma aplicação, sendo utilizadas em bases de dados relacionais fornecidas aos utilizadores do sistema. Outros acrônimos podem ser usados para definir as mesmas operações: ABCD: Add, Browse, Change and Delete BREAD: Browse, Read, Edit, Add and Delete
 
-## Layout web
-![Mobile 1](https://github.com/evandrolucas60/readme-assets-repository/blob/main/EfeitoParallaxMoonlight.gif)
-
 # Tecnologias utilizadas
 
 ## Front end
 - Bootstrap 4
-- 
-
+- C#
+- AspNetCore
+  
 # Como executar o projeto
 
 ## Front end web
